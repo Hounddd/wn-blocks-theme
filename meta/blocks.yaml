@@ -1,0 +1,107 @@
+
+text:
+    name: Simple text
+    description: simple text without html tags
+    icon: icon-file-text-o
+    fields:
+        content:
+            label: Content
+            span: left
+            type: textarea
+            size: small
+        textSize:
+            label: Text size
+            span: right
+            type: dropdown
+            emptyOption: -- none --
+            options:
+                'text-sm': 'tiny'
+                'text-md': 'small'
+                'text-base': 'normal'
+                'text-lg': 'huge'
+                'text-xl': 'large'
+                'text-2xl': 'larger'
+        textAlign:
+            label: Alignment
+            span: right
+            type: dropdown
+            emptyOption: -- none --
+            options:
+                'text-left': 'left'
+                'text-center': 'center'
+                'text-right': 'right'
+
+html:
+    name: HTML text
+    description: formated HTML
+    icon: icon-file-code-o
+    fields:
+        content:
+            label: HTML content
+            span: full
+            type: richeditor
+            toolbarButtons: ['paragraphFormat','paragraphStyle','quote','bold','italic','underline','strikeThrough','superscript','color','align','formatOL','formatUL','insertLink','insertHR','|','clearFormatting','html']
+
+image:
+    name: Image
+    description: simple image
+    icon: icon-file-image-o
+    fields:
+        image_mode:
+            label: Image from media
+            comment: use media manage resource
+            span: full
+            type: switch
+            default: true
+        image_alt:
+            label: Alt text
+            span: right
+        image:
+            label: Image
+            type: mediafinder
+            mode: image
+            span: left
+            imageWidth: 220
+            imageHeight: 220
+            trigger:
+                action: show
+                field: image_mode
+                condition: checked
+        image_url:
+            label: Image URL
+            comment: 'ex: https://unsplash.com/photos/DGH1u80sZik/download?w=640'
+            type: text
+            span: left
+            trigger:
+                action: show
+                field: image_mode
+                condition: unchecked
+        image_css:
+            label: Css classes
+            comment: classes to add to image
+            span: right
+
+card:
+    name: Card w/ icon
+    description: display dentered cards w/ icon
+    icon: icon-id-card-o
+    fields:
+        iconName:
+            label: Material.io icon name
+            comment: 'https://material.io/resources/icons/'
+            type: text
+            span: left
+        title:
+            label: Title
+            type: text
+            span: right
+        cssClasses:
+            label: CSS classes to apply to card
+            type: textarea
+            span: left
+            size: tiny
+        description:
+            label: Description
+            type: textarea
+            span: right
+            size: tiny

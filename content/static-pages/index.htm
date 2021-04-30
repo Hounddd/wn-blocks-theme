@@ -1,0 +1,104 @@
+[viewBag]
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+navigation_hidden = 0
+sections[0][show_options] = 1
+sections[0][fullScreen] = 1
+sections[0][noMargin] = 0
+sections[0][cssClasses] = "bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 text-blue-900 py-6"
+sections[0][content][0][content] = "This is just simple text with some css classes.
+Demonstrate 1 column section w/ 1 simple text block and 1 image block."
+sections[0][content][0][textSize] = "text-lg"
+sections[0][content][0][textAlign] = "text-center"
+sections[0][content][0][_group] = "text"
+sections[0][content][1][image_mode] = 0
+sections[0][content][1][image_alt] = "WinterCMS, best free CMS plateforme"
+sections[0][content][1][image] = ""
+sections[0][content][1][image_url] = "https://wintercms.com/storage/app/media/wordmark-svg.png"
+sections[0][content][1][image_css] = "max-w-lg mx-auto my-10"
+sections[0][content][1][_group] = "image"
+sections[0][_group] = "section"
+sections[1][show_options] = 0
+sections[1][fullScreen] = 0
+sections[1][noMargin] = 0
+sections[1][cssClasses] = ""
+sections[1][left][0][content] = "<h2>2 columns section</h2>
+
+<p>This section shows a \"<strong>2 columns section</strong>\" on large screens that fold on small screen in 1 column w/ 2 rows.</p>
+
+<h3>Left bloc</h3>
+
+<p>This block is an HTML block, &nbsp;where text can be <em>formated</em>.</p>
+
+<h3>Right block</h3>
+
+<p>Display an image from the media manager or from remote URL.</p>"
+sections[1][left][0][_group] = "html"
+sections[1][right][0][image_mode] = 0
+sections[1][right][0][image_alt] = ""
+sections[1][right][0][image] = ""
+sections[1][right][0][image_url] = "themes/blocks/assets/images/blocks.jpg"
+sections[1][right][0][image_css] = ""
+sections[1][right][0][_group] = "image"
+sections[1][_group] = "section-double"
+sections[2][show_options] = 0
+sections[2][fullScreen] = 0
+sections[2][noMargin] = 0
+sections[2][cssClasses] = ""
+sections[2][left][0][image_mode] = 0
+sections[2][left][0][image_alt] = ""
+sections[2][left][0][image] = ""
+sections[2][left][0][image_url] = "themes/blocks/assets/images/blocks-menus.png"
+sections[2][left][0][image_css] = ""
+sections[2][left][0][_group] = "image"
+sections[2][right][0][content] = "<h2>Play with responsive design</h2>
+
+<p>This section also displays 2 columns, but when the left block is an image block, then on small screens the order gets inverted to nicely alternate image and content blocks.</p>"
+sections[2][right][0][_group] = "html"
+sections[2][_group] = "section-double"
+sections[3][gridSizeMin] = "grid-cols-1"
+sections[3][gridSizeMax] = "grid-cols-4"
+sections[3][gridFlow] = "grid-flow-row"
+sections[3][placeItems] = "place-items-center"
+sections[3][show_options] = 1
+sections[3][fullScreen] = 1
+sections[3][noMargin] = 0
+sections[3][cssClasses] = "bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 text-indigo-900 py-6"
+sections[3][content][0][iconName] = "speed"
+sections[3][content][0][title] = "Speed"
+sections[3][content][0][cssClasses] = "bg-gradient-to-b from-blue-100 to-white text-green-500"
+sections[3][content][0][description] = "Smart system design, caching and other optimizations ensure that your projects perform well under pressure."
+sections[3][content][0][_group] = "card"
+sections[3][content][1][iconName] = "thumb_up"
+sections[3][content][1][title] = "Simplicity"
+sections[3][content][1][cssClasses] = "bg-gradient-to-b from-blue-200 to-white"
+sections[3][content][1][description] = "Build intricate websites with little more than HTML, CSS and JavaScript through a beautiful, user-friendly Backend panel."
+sections[3][content][1][_group] = "card"
+sections[3][content][2][iconName] = "timeline"
+sections[3][content][2][title] = "Stability"
+sections[3][content][2][cssClasses] = "bg-gradient-to-b from-blue-300 to-white text-green-500"
+sections[3][content][2][description] = "Careful iterations with backwards-compatibility in focus give you peace of mind that your website will function for years."
+sections[3][content][2][_group] = "card"
+sections[3][content][3][iconName] = "verified_user"
+sections[3][content][3][title] = "Security"
+sections[3][content][3][cssClasses] = "bg-gradient-to-b from-blue-400 to-white"
+sections[3][content][3][description] = "With full source code access and transparency, Winter CMS is carefully monitored. Security issues are promptly addressed."
+sections[3][content][3][_group] = "card"
+sections[3][_group] = "section-grid"
+sections[4][show_options] = 0
+sections[4][fullScreen] = 0
+sections[4][noMargin] = 0
+sections[4][cssClasses] = ""
+sections[4][content][0][content] = "<div class=\" max-w-3xl mx-auto bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative\"><strong class=\"font-bold\">Ho wait!</strong>
+	<br>This theme is built with <a href=\"https://tailwindcss.com/docs/installation#using-tailwind-via-cdn\" rel=\"noopener noreferrer\" target=\"_blank\">TailwindCSS</a> in a CDN linked version for a quick demo purpose.
+	<br><span class=\"text-red-600 font-bold\">DO NOT USE Tailwind this way in production</span>, see TailwindCSS documentation for more information.
+	<br>Tailwind is not required to manage static pages content via blocks.</div>"
+sections[4][content][0][_group] = "html"
+sections[4][_group] = "section"
+==
+<p>Hello World!</p>
+
+<p>I'm the content of the home page.
+	<br>Below this line, all is done with page variables definitions from <a href="https://github.com/wintercms/wn-pages-plugin" rel="noopener noreferrer" target="_blank">Static Pages plugin</a> for Winter CMS.</p>

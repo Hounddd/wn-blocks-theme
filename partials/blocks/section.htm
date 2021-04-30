@@ -1,0 +1,57 @@
+==
+{#
+ # Default section, may be render different ways
+ #
+ # params :
+ #    fullScreen : boolean, section dispaly 100% width of the screen
+ #    noMargin : boolean, section d'ont have margins
+ #    cssClasses : string, css classes to apply to section
+ #    content : string, raw html to display
+
+
+ #    imageCss : string, css classes to apply to image block
+ #    contentCss : string, css classes to apply to content block
+ #
+ #}
+
+
+{#
+ # Initialize variables
+ #}
+{% set cssClasses = data.cssClasses != '' ? data.cssClasses:'' %}
+{% set content = data.content != '' ? data.content:[] %}
+
+{% set image = data.image != '' ? (data.image | media) : ('assets/images/abstract-geometric-background-vector.svg' | theme ) %}
+{% set image = data.image_url != '' ? data.image_url %}
+{% set imageCss = data.imageCss ? data.imageCss : '' %}
+
+{#
+ # Manipulate variables
+ #}
+{% set cssClasses = cssClasses ~' '~ (data.noMargin ? 'm-0':'my-12') ~' '~ (data.fullScreen ? 'full-width':'') %}
+{% set imageCss = imageCss ~' '~ data.backgroundPosition ~' '~ data.backgroundRepeat ~' '~ data.backgroundSize %}
+
+{% if content|length > 0 %}
+    {% set group = content[0]._group %}
+    {% if group == 'leaning-title' %}
+        {% set cssClasses = cssClasses ~' title' %}
+    {% endif %}
+    {% if group in ['cta','cta-double'] %}
+        {% set cssClasses = cssClasses ~' block-center' %}
+    {% endif %}
+{% endif %}
+
+
+{#
+ # Render
+ #}
+{% spaceless %}
+<section class="{{ cssClasses }}">
+    <div class="container container--{{  group }} mx-auto">
+        {% for block in content %}
+            {% set group = block._group %}
+            {% partial 'blocks/content/'~ group ~'.htm' content=block %}
+        {% endfor %}
+    </div>
+</section>
+{% endspaceless %}

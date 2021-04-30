@@ -1,0 +1,17 @@
+
+body {
+    overflow-x: hidden;
+}
+
+.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.material-icons.md-64 {
+    font-size: 64px;
+}

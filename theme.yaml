@@ -1,0 +1,7 @@
+name: Blocks
+description: 'Demonstrates the use of repeater groups to assemble static pages with customizable building blocks.'
+author: 'Team Jazz, Liip AG'
+homepage: 'https://liip.ch'
+code: ''
+require:
+    - RainLab.Pages

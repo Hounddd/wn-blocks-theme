@@ -1,0 +1,17 @@
+{
+    "name": "hounddd/wn-blocks-theme",
+    "type": "wn-theme",
+    "description": "Winter CMS theme that demonstrates the use of repeater groups to assemble static pages with customizable building sections and blocks.",
+    "keywords": ["winter", "cms", "demo", "theme"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DamsFX - Damien MATHIEU",
+            "email": "contact@hounddd.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0"
+    }
+}

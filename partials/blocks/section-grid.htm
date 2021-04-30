@@ -1,0 +1,67 @@
+==
+{#
+ # Grid section
+ #
+ # params :
+ #    fullScreen : boolean, section dispaly 100% width of the screen
+ #    noMargin : boolean, section d'ont have margins
+ #    cssClasses : string, css classes to apply to section
+ #
+ #}
+
+{#
+ # Initialize variables
+ #}
+{% set cssClasses = data.cssClasses != '' ? data.cssClasses:'' %}
+{% set content = data.content != '' ? data.content:[] %}
+
+{% set cards = [
+	{
+		'title'       : 'consequatur',
+		'icon'        : 'grade',
+		'description' : 'Lorem ipsum dolor',
+		'txtColor'    : 'bg-white',
+		'-bgColor'     : 'bg-green-light',
+		'bgHoverColor': 'bg-green-light',
+	},
+	{
+		'title'       : 'dolorum',
+		'icon'        : 'horizontal_split',
+		'description' : 'Lorem ipsum dolor',
+		'-bgColor'     : 'bg-orange',
+		'bgHoverColor': 'bg-orange-soft',
+	},
+	{
+		'title'       : 'doloremque',
+		'icon'        : 'model_training',
+		'description' : 'Lorem ipsum dolor',
+		'txtColor'    : 'bg-white',
+		'bgHoverColor': 'bg-blue-soft',
+	}
+] %}
+
+
+{#
+ # Manipulate variables
+ #}
+{% set cssClasses = cssClasses ~' '~ (data.noMargin ? 'm-0':'my-12') ~' '~ (data.fullScreen ? 'full-width':'') %}
+
+{#
+ # Render
+ #}
+{% spaceless %}
+<section  class="{{ cssClasses }}">
+    <div class="container mx-auto">
+        <div class="grid {{ data.gridFlow }} {{ data.placeItems }} {{ data.gridSizeMin }} gap-4 lg:{{ data.gridSizeMax }}">
+            {% for block in content %}
+                {% set group = block._group %}
+                {% partial 'blocks/content/'~ group ~'.htm' content=block %}
+
+            {% else %}
+                <p class="text-center">No blocks to display</p>
+            {% endfor  %}
+        </div>
+    </div>
+</section>
+{% endspaceless %}
+

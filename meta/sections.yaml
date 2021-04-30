@@ -1,0 +1,193 @@
+section:
+    name: 1 column
+    description: 1 column for blocks
+    icon: icon-minus-square-o
+    fields:
+        show_options:
+            label: Show options
+            span: strom
+            cssClass: col-md-4
+            type: switch
+            default: 0
+        fullScreen:
+            label: Fullscreen width
+            comment: use 100% screen width
+            span: strom
+            cssClass: col-md-4
+            type: switch
+            default: 0
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        noMargin:
+            label: No margins
+            comment: section don't have margins before/after
+            span: strom
+            cssClass: col-md-4
+            type: switch
+            default: 0
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        cssClasses:
+            label: CSS classes to apply to section
+            type: text
+            span: full
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        content:
+            type: repeater
+            prompt: Add new content block
+            groups: themes/blocks/meta/blocks.yaml
+
+section-double:
+    name: 2 columns
+    description: 2 columns folding to 1 on small screens
+    icon: icon-columns
+    fields:
+        show_options:
+            label: Show options
+            span: strom
+            cssClass: col-md-4
+            type: switch
+            default: 0
+        fullScreen:
+            label: Fullscreen width
+            comment: use 100% screen width
+            span: strom
+            cssClass: col-md-4
+            type: switch
+            default: 0
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        noMargin:
+            label: No margins
+            comment: section don't have margins before/after
+            span: strom
+            cssClass: col-md-4
+            type: switch
+            default: 0
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        cssClasses:
+            label: CSS classes to apply to section
+            type: text
+            span: full
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        left:
+            type: repeater
+            span: left
+            prompt: Choose content block
+            maxItems: 1
+            groups: themes/blocks/meta/blocks.yaml
+        right:
+            type: repeater
+            span: right
+            prompt: Choose content block
+            maxItems: 1
+            groups: themes/blocks/meta/blocks.yaml
+
+section-grid:
+    name: Grid
+    description: display blocks in grid
+    icon: icon-table
+    fields:
+        gridSizeMin:
+            label: Small size
+            comment: gris size for small screens
+            type: dropdown
+            span: storm
+            cssClass: col-md-3
+            options:
+                'grid-cols-1': '1'
+                'grid-cols-2': '2'
+        gridSizeMax:
+            label: Large size
+            comment: gris size for large screens
+            type: dropdown
+            span: storm
+            cssClass: col-md-3
+            options:
+                'grid-cols-1': '1'
+                'grid-cols-2': '2'
+                'grid-cols-3': '3'
+                'grid-cols-4': '4'
+        gridFlow:
+            label: Grid size
+            comment: gris size for small screens
+            type: dropdown
+            span: storm
+            cssClass: col-md-3
+            options:
+                'grid-flow-row': 'Row'
+                'grid-flow-col': 'Column'
+                'grid-flow-row-dense': 'Row dense'
+                'grid-flow-col-dense': 'Column dense'
+        placeItems:
+            label: Place items
+            comment: utilities for controlling how items are justified and aligned at the same time.
+            type: dropdown
+            span: storm
+            cssClass: col-md-3
+            options:
+                'place-items-center': 'center'
+                'place-items-start': 'start'
+                'place-items-end': 'end'
+                'place-items-between': 'space-between'
+                'place-items-around': 'space-around'
+                'place-items-evenly': 'space-evenly'
+                'place-items-stretch': 'stretch'
+        show_options:
+            label: Show options
+            span: strom
+            cssClass: col-md-3
+            type: switch
+            default: 0
+        fullScreen:
+            label: Fullscreen width
+            comment: use 100% screen width
+            span: strom
+            cssClass: col-md-3
+            type: switch
+            default: 0
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        noMargin:
+            label: No margins
+            comment: section don't have margins before/after
+            span: strom
+            cssClass: col-md-3
+            type: switch
+            default: 0
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        cssClasses:
+            label: CSS classes to apply to section
+            type: textarea
+            size: tiny
+            span: strom
+            cssClass: col-md-3
+            trigger:
+                action: show
+                field: show_options
+                condition: checked
+        content:
+            type: repeater
+            prompt: Add new block
+            style: accordion
+            groups: themes/blocks/meta/blocks.yaml

@@ -1,0 +1,66 @@
+==
+{#
+ # Initialize variables
+ #}
+{% set cssClass = data.cssClass != '' ? data.cssClass:'' %}
+{% set content = data.content != '' ? data.content:[] %}
+
+{% set image = data.image != '' ? (data.image | media) : ('assets/images/abstract-geometric-background-vector.svg' | theme ) %}
+{% set image = data.image_url != '' ? data.image_url %}
+{% set imageCss = data.imageCss ? data.imageCss : '' %}
+
+{#
+ # Manipulate variables
+ #}
+{#
+{% set cssClass = cssClass ~ (data.fullScreen ? ' full-screen':'') %}
+#}
+{% set cssClass = cssClass ~ (data.noMargin ? ' no-margins':'') ~ (data.fullScreen ? ' full-screen':'') ~' '~ data.color %}
+{% set cssClass = cssClass ~ (sectionType == 'curved' ? ' full-screen':'') %}
+
+
+{% if content|length > 0 %}
+    {% set group = content[0]._group %}
+    {#
+    {% set content = content[0] %}
+    #}
+    {% if group == 'leaning-title' %}
+        {% set cssClass = cssClass ~' title' %}
+    {% endif %}
+    {% if group == 'cta' %}
+        {% set cssClass = cssClass ~' block-center' %}
+    {% endif %}
+{% endif %}
+
+{% set contentCss = contentCss ~' '~ data.shadow %}
+{% set imageCss = imageCss ~' '~ data.backgroundPosition ~' '~ data.backgroundRepeat ~' '~ data.backgroundSize %}
+
+{#
+ # Render
+ #}
+{% spaceless %}
+<section class="{{ sectionType }} {{ cssClass }}">
+    <div class="container">
+        <div class="flex flex-wrap space-y-4">
+            {% set orderCss = ( data.left ? ( data.left[0]._group == 'image' ?' order-last lg:order-first':''):'' ) %}
+
+            <div class="flex flex-col items-center justify-center w-full px-8 md:w-1/2{{ orderCss }}">
+            {% if data.left %}
+                {% set colGroup = data.left[0]._group %}
+                {% set colContent = data.left[0] %}
+                {% partial 'blocks/content/'~ colGroup ~'.htm' content=colContent %}
+            {% endif %}
+            </div>
+
+            <div class="flex flex-col items-center justify-center w-full px-8 md:w-1/2">
+            {% if data.right %}
+                {% set colGroup = data.right[0]._group %}
+                {% set colContent = data.right[0] %}
+                {% partial 'blocks/content/'~ colGroup ~'.htm' content=colContent %}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endspaceless %}
+

@@ -1,0 +1,50 @@
+[staticPage]
+==
+<!DOCTYPE html>
+<html lang="{{ this.page.activeLocale ?: 'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ this.page.title }}</title>
+
+    <link href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ 'assets/styles.css'|theme }}" />
+</head>
+<body>
+    {#
+     # Reapeater definitions
+     #}
+    {repeater
+        name="sections"
+        groups="themes/blocks/meta/sections.yaml"
+        tab="Blocks"
+        prompt="Add new section"
+        style="accordion"}
+        {variable name="_dummy" type="text"}{/variable}
+    {/repeater}
+
+    {% partial 'header' %}
+
+    <main class="container px-6 mx-auto">
+
+        <div class="py-6 prose max-w-none">
+        {% page %}
+        </div>
+
+        {#
+         # Rendering blocks
+         #}
+        {% for section in sections %}
+            <!-- must reside in partials/blocks/{name_of_group} -->
+            {% partial 'blocks/' ~ section._group data=section %}
+        {% endfor %}
+
+    </main>
+
+    {% partial 'footer' %}
+</body>
+</html>

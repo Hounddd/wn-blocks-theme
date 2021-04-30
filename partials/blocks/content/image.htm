@@ -1,0 +1,8 @@
+{% set image = ('assets/images/blocks.jpg' | theme ) %}
+{% if content.image_mode == 1 %}
+    {% set image = content.image != '' ? (content.image | media ):image %}
+{% else %}
+    {% set image = content.image_url != '' ? content.image_url : image %}
+{% endif %}
+
+<img src="{{ image }}" alt="{{ content.image_alt }}" class="{{ content.image_css }}">
