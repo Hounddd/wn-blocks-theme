@@ -4,7 +4,6 @@
 <html lang="{{ this.page.activeLocale ?: 'en' }}">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ this.page.title }}</title>
 
@@ -13,6 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ 'assets/styles.css'|theme }}" />
+
+    {% styles %}
 </head>
 <body>
     {#
@@ -23,7 +24,8 @@
         groups="themes/blocks/meta/sections.yaml"
         tab="Blocks"
         prompt="Add new section"
-        style="accordion"}
+        style="accordion"
+    }
         {variable name="_dummy" type="text"}{/variable}
     {/repeater}
 
@@ -46,5 +48,6 @@
     </main>
 
     {% partial 'footer' %}
+    {% scripts %}
 </body>
 </html>
