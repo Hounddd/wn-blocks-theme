@@ -16,7 +16,7 @@ Clone this repo into your winter themes folder.
 
 ```
 cd themes
-git clone https://github.com/liip/oc-blocks-theme.git blocks
+git clone https://github.com/Hounddd/wn-blocks-theme blocks
 ```
 ## Usage
 NOTE: the name **blocks** is important, if you change the themes name you have to alter some files to match the path.
