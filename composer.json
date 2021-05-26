@@ -1,5 +1,6 @@
 {
     "name": "hounddd/wn-blocks-theme",
+    "version": "1.2.0",
     "type": "winter-theme",
     "description": "Winter CMS theme that demonstrates the use of repeater groups to assemble static pages with customizable building sections and blocks.",
     "keywords": ["winter", "cms", "demo", "theme"],

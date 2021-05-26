@@ -1,7 +1,7 @@
 name: Blocks
 description: 'Demonstrates the use of repeater groups to assemble static pages with customizable building sections and blocks.'
 author: 'Damien MATHIEU, HOUNDDD'
-homepage: 'https://hounddd.fr'
+homepage: 'https://www.hounddd.fr'
 code: ''
 require:
     - Winter.Pages
